@@ -1,0 +1,12 @@
+<h1>Question 1</h1>
+<p>Convert Celsius to Fahrenheit</p>
+<div class="input-column">
+  <mat-form-field>
+    <mat-label >Celsius</mat-label>
+    <input [(ngModel)]="celcius" (ngModelChange)="changeTempreture($event,'celsius')" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fahrenheit</mat-label>
+    <input [(ngModel)]="fahrenheit" (ngModelChange)="changeTempreture($event,'fahrenheit')" matInput>
+  </mat-form-field>
+</div>

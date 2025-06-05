@@ -1,0 +1,48 @@
+<h1>Question 2</h1>
+<p>An array of objects is passed as a prop to the component, where each object is a weather record for a single city. The object has 4 properties: </p>
+<li>name: The name of the city. [STRING] </li>
+<li>temperature: The temperature in the city. [STRING] </li>
+<li>wind: The wind in the city. [STRING]</li>
+<li>humidity: The humidity in the cit.y [STRING] [STRING]</li>
+<h3><b>There is an input field for the city name where the user can type the name of a city to search the weather data for. (The city name is case-insensitive.)</b></h3>
+<p>If data exists for the typed input, render the weather details div> as below, inside div data-test-id="weather-details".</p>
+<p>
+    span data-test-id="output-temperature">temperature span>, where temperature is the value from the weather record.
+</p>
+<p>
+    div data-test-id="output-wind">Wind: wind /div>, where wind is the value from the weather record.
+</p>
+<p>
+    div data-test-id="output-humidity">Humidity: humidity /div>, where humidity is the value from the weather record.
+</p>
+<p>If no data exists for the typed input, do not render the weather details div>, but instead render div data-test-id="no-results">No Results Found div>.
+At component render, since nothing is typed, do not render above 2 divs. </p>
+
+<hr>
+
+<div class="input-column">
+  <mat-form-field>
+    <mat-label >Country</mat-label>
+    <input [(ngModel)]="city"matInput (ngModelChange)="getWeatherData()">
+  </mat-form-field>
+
+  <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{wetherdata.name}}</mat-card-title>
+      <mat-card-subtitle>{{wetherdata.feelslike}}</mat-card-subtitle><img mat-card-md-image [src]="wetherdata.icon" alt="Weather icon">
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <span data-test-id="output-temperature">Temperature: {{wetherdata.temperature}}</span>
+    </p>
+    <p>
+      Wind: {{wetherdata.windspeed}}
+    </p>
+    <p>
+      Humidity: {{wetherdata.humidity}}
+    </p>
+  </mat-card-content>
+</mat-card>
+</div>
