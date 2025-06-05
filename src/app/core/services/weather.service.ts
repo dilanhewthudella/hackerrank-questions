@@ -13,10 +13,6 @@ export class WeatherService {
   KEY = environment.WEATHER_API_KEY;
   constructor(private _httpClient: HttpClient) {}
   getWeatherData(city: string): Observable<Weather> {
-    console.log(
-      'Fetching weather data for city:',
-      this.BASE_URL + this.KEY + '&q=' + city
-    );
     return this._httpClient
       .get<any>(this.BASE_URL + this.KEY + '&q=' + city)
       .pipe(

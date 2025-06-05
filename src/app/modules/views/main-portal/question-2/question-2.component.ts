@@ -33,15 +33,12 @@ export class Question2Component {
       .getWeatherData(this.city)
       .subscribe({
         next: (event) => {
-          // Only log when the event is an HttpResponse
           this.wetherdata = event;
-          console.log('Weather Data:', this.wetherdata);
         },
         error: (error) => {
           console.error('Error fetching weather data:', error);
         },
         complete: () => {
-          console.log('Weather data fetch complete');
           this.getWatherSubscription$.unsubscribe();
         },
       });
